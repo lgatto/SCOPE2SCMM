@@ -1,5 +1,5 @@
 ## This script
-## 1. Add the scRNASeq matrices to BiocFileCache
+ ## 1. Add the scRNASeq matrices to BiocFileCache
 ## 2. Reads the count matrices
 ## 3. Adds the counts matrices to BiocFileCache as a hdf5 resource
 ## 4. Creates the SingleCellExperiment objects
@@ -27,13 +27,13 @@ library(BiocFileCache)
 ## ---------------------- ##
 ## m1 <- data.table::fread(file = bfcquery(bfc, "GSM4226877")$rpath,
 ##                         sep = ",", header = TRUE)
-## rn <- make.unique(m1[[1]])
-## m1 <- m1[, -1]
+## rn <- m1[[1]]
+## m1 <- as.matrix(m1[, -1])
 ## rownames(m1) <- rn
 ## m2 <- data.table::fread(file = bfcquery(bfc, "GSM4226878")$rpath,
 ##                         sep = ",", header = TRUE)
-## rn <- make.unique(m2[[1]])
-## m2 <- m2[, -1]
+## rn <- m2[[1]]
+## m2 <- as.matrix(m2[, -1])
 ## rownames(m2) <- rn
 
 ## ------------------------------------------------------- ##
